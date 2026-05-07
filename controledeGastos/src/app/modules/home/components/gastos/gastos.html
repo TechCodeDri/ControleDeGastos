@@ -1,0 +1,57 @@
+<section class="content-gasto">
+  <header>
+    <div>
+      <h1>Adicionar gasto</h1>
+      <p>Registre um novo gasto</p>
+    </div>
+  </header>  
+
+    <form [formGroup]="form"
+    
+    class="content-form-gastos" >
+    <div>
+      <label for="valor">Valor</label>
+      <input 
+        type="text" 
+        id="valor" 
+        name="valor" 
+        placeholder="R$ 150,00"
+        formControlName="valor"
+        />
+    </div>
+    <div>
+      <label for="categoria">Categoria</label>
+      <select name="categoria" id="categoria" 
+      formControlName="categoria">
+        <option value="">Selecione uma categoria</option>
+        <option value="alimentacao">Alimentação</option>
+        <option value="transporte">Transporte</option>
+        <option value="moradia">Moradia</option>
+        <option value="lazer">Lazer</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="descricao">Descrição (opcional)</label>
+      <input 
+        type="text" 
+        id="descricao" 
+        name="descricao"
+        placeholder="Digite uma descrição"
+        maxlength="50"
+        formControlName="descricao" />
+    </div>
+
+    <div>
+      <label for="data">Data</label>
+      <input 
+        type="date" 
+        id="data" 
+        name="data"
+        formControlName="data" />
+    </div>
+
+       <button type="submit" (click)="onSubmit()">+ Adicionar gasto</button>
+   
+  </form>
+  </section>
